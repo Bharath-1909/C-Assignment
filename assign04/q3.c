@@ -1,52 +1,59 @@
 #include<stdio.h>
-int flag=0;
-int cal(int,char,int);
-int main()
+int calculate(int, char, int);
+int flag;
+int main(void)
 {
-int n1,n2,res;
-char opr;
-printf("enter the operator1 and operator2:");
-scanf("%d%d",&n1,&n2);
-printf("enter the operator");
-scanf("%c",&opr);
-res=cal(int n1,char opr,int n2);
-if(flag==0)
-printf("%d %c %d : %d\n",n1,opr,n2,res);
-else
-flag=0
-return 0;
+	char choice;
+	int num1, num2, result;
+	char opr;
+
+	do
+	{
+		printf("Enter num1, opr, num2 : ");
+		scanf("%d %c %d", &num1, &opr, &num2);
+		result = calculate(num1, opr, num2);
+		if(flag == 0)
+			printf("%d %c %d = %d\n", num1, opr, num2, result);
+		else
+			flag = 0;
+
+		printf("Do you want to continue? (y/n) : ");
+		scanf("%*c%c", &choice);
+
+	}while(choice != 'n');
+	return 0;
 }
-int cal(int n,char c,int m)
-{
-char choice;
-int res
-{
-do
-{
-//printf("enter which operation you want to perform add,sub,mul or add:");
-//scanf("%c",&choice);
-switch(c)
-{
-case '+':res=n+m;
-		printf("addition :%d\n",res);
-		break;
 
-case '-':res=n-m;
-		printf("subscration :%d\n",res);
-		break;
+int calculate(int num1, char opr, int num2)
+{
+	int result;
 
-case '*':res=n*m;
-		printf("multiplication :%d\n",res);
-		break;
+	switch(opr)
+	{
+		case '+':
+			result = num1 + num2;
+			break;
 
-case '/':res=n/m;
-		printf("division :%d\n",res);
-		flag=1
-		break;
-printf("do you want to continue?n/y\n");
-scanf("%c",&choice);
+		case '-':
+			result = num1 - num2;
+			break;
+
+		case '*':
+			result = num1 * num2;
+			break;
+
+		case '/':
+			if(num2 != 0)
+				result = num1 / num2;
+			else
+			{
+				printf("denominator is zero\n");
+				flag = 1;
+			}
+			break;
+	}
+	return result;
 }
-while(choice!='n');
 
 
 
@@ -55,7 +62,3 @@ while(choice!='n');
 
 
 
-
-
-
-}
