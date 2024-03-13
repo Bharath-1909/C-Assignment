@@ -1,4 +1,4 @@
-TARGET=q3
+TARGET=q5
 CSRCS=$(TARGET).c
 CSRCS+=q2.c
 COBJS=$(CSRCS:.c=.o)
@@ -15,7 +15,7 @@ run:
 	./$(TARGET)
 
 clean :
-	rm $(TARGET) $(COBJS)
+	rm -r  $(TARGET) $(COBJS)
 
 phony: 
 	run clean
