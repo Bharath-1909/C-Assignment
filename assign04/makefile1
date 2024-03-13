@@ -1,0 +1,16 @@
+TARGET=main
+CSRCS=$(TARGET).c
+CSRCS+=fun.c
+COBJS=$(CSRCS:.c=.o)
+
+cc=gcc
+
+$(TARGET) : $(COBJS)
+	$(cc) -o $@ $^
+%.o : %.c
+	$(cc) -c $<
+run:
+	./$(TARGET)
+Clean:
+	rm $(TARGET) $(COBJS)
+PHONY: RUN CLEAN

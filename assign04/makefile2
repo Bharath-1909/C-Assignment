@@ -1,0 +1,15 @@
+TARGET=main
+CSRCS=$(TARGET).c
+CSRCS+=fun.c
+cc=gcc
+CFLAG=
+LDFLAG=
+
+$(TARGET) : $(CSRCS)
+	(cc) (LDFLAG) - o $@ $^
+%.o:%.c
+	(cc) (CFLAG) -c $<
+run:
+	./$(TARGET) 
+clean:
+	rm $(TARGET) $(CSRCS)
