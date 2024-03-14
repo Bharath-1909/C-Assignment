@@ -27,6 +27,22 @@ void print_array(int arr[],int length)
 	printf("\n");
 }
 
+void selection_sort(int arr[],int len)
+{
+	int i,j;
+	for(i=0;i<len-1;i++)
+	{
+	for(j=i+1;j<len;j++)
+	{
+	if(arr[i]>arr[j])
+	{
+	int temp=arr[j];
+		arr[j]=arr[i];
+		arr[i]=temp;
+	}
+	}
+	}
+}
 
 
 

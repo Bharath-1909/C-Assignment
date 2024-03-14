@@ -1,4 +1,4 @@
-TARGET=q7
+TARGET=q10
 
 
 CSRCS=$(TARGET).c
