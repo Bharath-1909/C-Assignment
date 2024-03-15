@@ -33,10 +33,11 @@ printf("the copmarision of str and str3:%d\n",res1);
 //printf("the copmarision of strrev of str 2:%s\n",strrev(str2));
 
 char a;
+char *ptr;
 printf("enter the char to locate: ");
-scanf("%[^\n]c",&a);
-strchr(str3,a);
-printf("the copmarision of strrev of str 2:%s\n",strchr(str3,a));
+scanf("%c",&a);
+ptr=strchr(str3,a);
+printf("the copmarision of strrev of str 2:%s\n",ptr);
 
 
 
