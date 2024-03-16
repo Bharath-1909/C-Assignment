@@ -20,39 +20,43 @@ int main()
 	else if(res>0)
 		printf("string1 is greater\n");
 	else
-		printf("string2 is greater\n");
+		printf("string1 is lesser\n");
 }
 
 int my_stricmp(const char *str1,const char *str2)
 {   
-	int i,j,n,res;
-	char *s1,*s2;
+	int i=0,n,res=0;
+	//char *s1,*s2;
 	printf("how do you want convert the string 1.uppercase 2.lowercase\n");
     scanf("%d",&n);
-    
+   
 	switch(n)
 	{
 	case 1:
 			str1=strupr(str1);
-			printf("%s\n",s1);
+			printf("%s\n",str1);
 			str2=strupr(str2);
-			printf("%s\n",s2);
+			printf("%s\n",str2);
 			break;
 	case 2:
-			s1=strlwr(str1);
-			s2=strlwr(str2);
+			str1=strlwr(str1);
+			str2=strlwr(str2);
 			break;
 	defualt:
 			printf("enter the valid option");
-	}
-
-	for(i=0;str1[i]!='\0'&&str2[i]!='\0';i++)
-	{
-	if(!(str1[i]==str2[i]))
+	} 
+	
+  printf("%s\n",str1);
+  printf("%s\n",str2);
+   	for( i=0;str1[i]!='\0';i++)
+	{ 
+		//printf("%s\n",str1);
+	 	//printf("%s\n",str2);
+	if(str1[i]!=str2[i])
 	{		
-		printf("%s\n",str1[i]);
-			printf("%s\n",str2[i]);
-	 	res=str1[i]-str2[i];
+		printf("%c\n",str1[i]);
+		printf("%c\n",str2[i]);
+	 return res=str1[i]-str2[i];
 	}
 	}
 return res;

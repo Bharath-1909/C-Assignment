@@ -20,12 +20,14 @@ printf("string2 is greater\n");
 
 int strcmp(const char *str1,const char *str2)
 {
-	int i,res;
+	int i,res=0;
 	for(i=0;str1[i]!='\0'&&str2[i]!='\0';i++)
 	{
 	if(!(str1[i]==str2[i]))
 	 res=str1[i]-str2[i];
 	}
+	
+	 printf("%d",res);
 return res;
 }
 
