@@ -1,5 +1,5 @@
 
-TARGET=q4b
+TARGET=q5b
 CSRCS=$(TARGET).c
 CSRCS+=Q3.c
 COBJS=$(CSRCS:.c=.o)
